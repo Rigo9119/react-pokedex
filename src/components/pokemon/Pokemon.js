@@ -6,12 +6,13 @@ import PokemonDetails from './PokemonDetails';
 
 
 const Pokemon = ({ details, showDetails }) => {
-  let data = details;
 
   return (
     <Wrapper>
       <PokemonImg />
-      <PokemonDetails data={ data } showDetails={showDetails}/>
+      <PokemonDetails 
+        data={ details }
+        showDetails={showDetails}/>
     </Wrapper>
   );
 };
