@@ -24,7 +24,7 @@ class Table extends Component {
     event.preventDefault();
     // here we get the function from parent cmp
     // and pass the input so it gets the data
-    this.props.onSubmit(this.state.inputValue);
+    this.props.onClick(this.state.inputValue);
   }
   render() {
     let data = this.props.list,
@@ -33,7 +33,11 @@ class Table extends Component {
           return (
             <Row key={index}>
               <Cell>
-                <Button value={el.name} >{el.name}</Button>
+                <Button 
+                  value={el.name} 
+                  onClick={(e) => this.setState({inputValue: e.target.value})}>
+                    {el.name}
+                  </Button>
               </Cell>
             </Row>
           )
