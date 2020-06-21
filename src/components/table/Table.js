@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
+import colors from '../../styles/colors'
 
 import Row from './TableRow'
 import Header from './TableHeader'
@@ -71,14 +72,14 @@ const Tbody = styled.tbody``;
 const Button = styled.button`
   background-color: transparent;
   border: 1px solid transparent;
-  color: white;
+  color: ${colors.white};
   outline: none;
   padding: 5px 10px;
   text-decoration: none;
   text-transform: capitalize;
 
   :hover {
-    border: 1px solid yellow;
+    border: 1px solid ${colors.yellow};
     font-weight: bolder;
     color: yellow;
   }

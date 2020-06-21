@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled'
 
+import colors from '../../styles/colors'
 
 const PokemonDetail = (props) => {
   return (
@@ -37,7 +38,7 @@ const Title = styled.h4`
 `;
 
 const Text = styled.p`
-  color: yellow;
+  color: ${colors.yellow};
   font-size: 14px;
   width: 100%;
 `;

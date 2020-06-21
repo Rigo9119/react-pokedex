@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 import Detail from './PokemonDetail'
+import colors from '../../styles/colors'
 
 const PokemonDetails = ({data, showDetails}) => {
   
@@ -95,7 +96,7 @@ const Details = styled.div`
 `;
 
 const Name = styled.h2`
-  color: yellow;
+  color: ${colors.yellow};
   font-size: 29px;
   text-transform: uppercase;
   margin: 15px 0px;
@@ -110,7 +111,7 @@ const Stats = styled.div`
 `;
 
 const Title = styled.h3`
-  color: white;
+  color: ${colors.white};
   font-size: 24px;
   text-transform: uppercase;
   margin: 15px 0px;
