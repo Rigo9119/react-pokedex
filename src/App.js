@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styled from '@emotion/styled';
 import axios from 'axios';
 
-import {mainDetails} from './helpers/pokemonCreator';
+import { mainDetails } from './helpers/pokemonCreator'
+import  colors  from './styles/colors'
 
 import SearchBar from './components/searchBar/SearchBar'
 import Pokemon from './components/pokemon/Pokemon'
@@ -84,7 +85,7 @@ export default class App extends Component {
 
 const StApp = styled.div`
   align-items: center;
-  background-color: crimson;
+  background-color: ${colors.crimson};
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
