@@ -17,8 +17,7 @@ export default class App extends Component {
     this.state = { 
       pokemonsList: [],
       pokemonDetails: {},
-      activeDisplay: false,
-      pokemonSearch: ''
+      activeDisplay: false
     };
   }
 
@@ -42,6 +41,7 @@ export default class App extends Component {
         pokemonDetails: mainDetails(data),
         activeDisplay: true
       });
+
     } catch(error) {
       console.log(`ERROR :::=> ${error}`);
     }
@@ -60,7 +60,7 @@ export default class App extends Component {
       console.log(`ERROR :::=> ${error}`);
     }
   };
-
+  
   render() {
     let list        = this.state.pokemonsList,
         showDetails = this.state.activeDisplay,
@@ -73,7 +73,7 @@ export default class App extends Component {
           <StTable 
             list={list} 
             showDetails={showDetails} 
-            onClick={this.onSearchSubmmit}/>
+            onSubmit={this.onSearchSubmmit}/>
           <StPokemon 
             details={details} 
             showDetails={showDetails} />
