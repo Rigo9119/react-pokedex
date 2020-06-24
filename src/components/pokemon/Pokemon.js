@@ -22,4 +22,10 @@ export default Pokemon;
 
 // styles
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  width: 60%;
+`;

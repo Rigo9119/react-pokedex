@@ -40,7 +40,9 @@ class Table extends Component {
       <StTable>
         <Tbody>
           <Row>
-            <Header>Nombre</Header>
+            <Header>
+              Nombre
+            </Header>
           </Row>
           {getName}
         </Tbody> 

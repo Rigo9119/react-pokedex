@@ -104,7 +104,7 @@ const Content = styled.div`
 `;
 
 const StTable = styled(Table)`
-  width: 45%;
+  width: 35%;
 `;
 
 const StPokemon = styled(Pokemon)`
