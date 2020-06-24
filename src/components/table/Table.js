@@ -9,23 +9,15 @@ import Header from './TableHeader'
 import Cell from './TableData'
 
 class Table extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inputValue: ''
-    }
-  };
-
   /**
    *  arrow functions bind the this keyword 
    *  into the class
    */
-  onFormSubmit = (event) => {
+  onClickSubmit = (event) => {
     event.preventDefault();
     // here we get the function from parent cmp
     // and pass the input so it gets the data
-    this.props.onClick(this.state.inputValue);
+    this.props.onSubmit(event.target.value);
   }
   render() {
     let data = this.props.list,
@@ -36,7 +28,7 @@ class Table extends Component {
               <Cell>
                 <Button 
                   value={el.name} 
-                  onClick={(e) => this.setState({inputValue: e.target.value})}>
+                  onClick={(e) => this.onClickSubmit(e)}>
                     {el.name}
                   </Button>
               </Cell>
