@@ -7,7 +7,7 @@ import  colors  from './styles/colors'
 
 import SearchBar from './components/searchBar/SearchBar'
 import Pokemon from './components/pokemon/Pokemon'
-import Table from './components/table/Table'
+import Table from './components/list/List'
 
 export default class App extends Component {
 

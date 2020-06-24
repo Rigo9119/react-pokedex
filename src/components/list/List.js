@@ -4,10 +4,6 @@ import styled from '@emotion/styled'
 
 import colors from '../../styles/colors'
 
-import Row from './TableRow'
-import Header from './TableHeader'
-import Cell from './TableData'
-
 class Table extends Component {
   /**
    *  arrow functions bind the this keyword 
@@ -19,35 +15,30 @@ class Table extends Component {
     // and pass the input so it gets the data
     this.props.onSubmit(event.target.value);
   }
+
   render() {
     let data = this.props.list,
         getName = data.map((el, index) => {
-          // TODO hay que hacer refactor de esto 
-          return (
-            <Row key={index}>
-              <Cell>
-                <Button 
-                  value={el.name} 
-                  onClick={(e) => this.onClickSubmit(e)}>
-                    {el.name}
-                  </Button>
-              </Cell>
-            </Row>
-          )
-        });
+        // TODO hay que hacer refactor de esto 
+        return (
+          <Pokemon key={index}>
+            <Button 
+              value={el.name} 
+              onClick={(e) => this.onClickSubmit(e)}>
+                {el.name}
+            </Button>
+          </Pokemon>
+        )
+      });
 
     return (
-      <StTable>
-        <Tbody>
-          <Row>
-            <Header>
-              Nombre
-            </Header>
-          </Row>
-          {getName}
-        </Tbody> 
-      </StTable>
-    );
+      <PokemonList>
+        <ListTitle>
+          Nombre
+        </ListTitle>
+        {getName}
+      </PokemonList>
+    )
   }
 };
 
@@ -59,9 +50,16 @@ Table.propTypes = {
 
 // styles 
 
-const StTable = styled.table``;
+const PokemonList = styled.ul``;
 
-const Tbody = styled.tbody``;
+const ListTitle = styled.h4`
+  margin-bottom: 20px;
+`;
+
+const Pokemon = styled.li`
+  list-style: none;
+  margin: 2px 0;
+`;
 
 const Button = styled.button`
   background-color: transparent;
