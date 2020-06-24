@@ -14,23 +14,23 @@ const PokemonDetails = ({data, showDetails}) => {
           {data.name}
         </Name>
         <Detail 
-          title ='Especie'
+          title = 'Species'
           detail={data.species}
         />
         <Detail 
-          title='Tipos'
+          title='Types'
           detail={data.types}
         />
         <Detail 
-          title='Habilidades'
+          title='abilities'
           detail={data.abilities}
         />
         <Detail 
-          title='Peso'
+          title='Weight'
           detail={data.weight}
         />
         <Detail 
-          title='Altura'
+          title='Height'
           detail={data.height}
         />
         <Detail 
@@ -83,7 +83,7 @@ const Wrapper = styled.div `
   align-items: center;
   display: ${props => props.showDetails === true ? 'flex' : 'none'};
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
 `;
 
@@ -92,7 +92,7 @@ const Details = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  width: 40%;
+  width: 50%;
 `;
 
 const Name = styled.h2`
@@ -107,7 +107,7 @@ const Stats = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  width: 40%;
+  width: 50%;
 `;
 
 const Title = styled.h3`
