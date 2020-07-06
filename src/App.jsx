@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import styled from '@emotion/styled';
 import axios from 'axios';
 
 import { mainDetails } from './helpers/pokemonCreator'
-import  colors  from './styles/colors'
+import { StApp, Content, StTable, StPokemon } from './App_styles';
 
 import SearchBar from './components/searchBar/SearchBar'
-import Pokemon from './components/pokemon/Pokemon'
-import Table from './components/list/List'
 
 export default class App extends Component {
 
@@ -15,7 +12,6 @@ export default class App extends Component {
     super(props);
 
     this.state = { 
-      pokemonsList: [],
       pokemonDetails: {},
       activeDisplay: false
     };
@@ -62,8 +58,7 @@ export default class App extends Component {
   };
   
   render() {
-    let list        = this.state.pokemonsList,
-        showDetails = this.state.activeDisplay,
+    let showDetails = this.state.activeDisplay,
         details     = this.state.pokemonDetails;
 
     return (
@@ -71,7 +66,7 @@ export default class App extends Component {
         <SearchBar onSubmit={this.onSearchSubmmit}/>
         <Content>
           <StTable 
-            list={list} 
+            //list={list} 
             showDetails={showDetails} 
             onSubmit={this.onSearchSubmmit}/>
           <StPokemon 
@@ -82,31 +77,3 @@ export default class App extends Component {
     )
   }
 };
-
-const StApp = styled.div`
-  align-items: center;
-  background-color: ${colors.crimson};
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  height: 100vh;
-  padding: 20px;
-  text-align: center;
-  width: 100vw;
-`;
-
-const Content = styled.div`
-  align-items: center;
-  display: flex; 
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  width: 100%;
-`;
-
-const StTable = styled(Table)`
-  width: 35%;
-`;
-
-const StPokemon = styled(Pokemon)`
-  width: 45%;
-`;
