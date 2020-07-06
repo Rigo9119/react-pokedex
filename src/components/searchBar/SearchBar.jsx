@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 
-import Input from '../input/Input';
+import { Form } from './SearchBar_styles'
+import Input from '../input/Input.jsx';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -42,14 +42,3 @@ SearchBar.propTypes = {
 
 
 export default SearchBar;
-
-// STYLES
-
-const Form = styled.form`
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  margin-bottom: 60px;
-`;
-

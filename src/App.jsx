@@ -4,7 +4,7 @@ import axios from 'axios';
 import { mainDetails } from './helpers/pokemonCreator'
 import { StApp, Content, StTable, StPokemon } from './App_styles';
 
-import SearchBar from './components/searchBar/SearchBar'
+import SearchBar from './components/searchBar/SearchBar.jsx'
 
 export default class App extends Component {
 
