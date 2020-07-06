@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { connect } from 'react-redux';
+import { fetchPokemonList } from '../../actions/index'
 
 import colors from '../../styles/colors'
 
@@ -16,33 +18,51 @@ class Table extends Component {
     this.props.onSubmit(event.target.value);
   }
 
-  render() {
+  componentDidMount() {
+    // here we call the action as props
+    this.props.fetchPokemonList()
+  }
+
+  renderPokemonList() {
     let data = this.props.list,
         getName = data.map((el, index) => {
-        // TODO hay que hacer refactor de esto 
-        return (
-          <Pokemon key={index}>
-            <Button 
-              value={el.name} 
-              onClick={(e) => this.onClickSubmit(e)}>
-                {el.name}
-            </Button>
-          </Pokemon>
-        )
-      });
+          return (
+            <Pokemon key={index}>
+              <Button 
+                value={el.name} 
+                onClick={(e) => this.onClickSubmit(e)}>
+                  {el.name}
+              </Button>
+            </Pokemon>
+          )
+        });
 
+    return getName;
+  }
+  render() {
     return (
       <PokemonList>
         <ListTitle>
           Nombre
         </ListTitle>
-        {getName}
+        {this.renderPokemonList()}
       </PokemonList>
     )
   }
 };
 
-export default React.memo(Table);
+/**
+ * This is how we connect redux to the react app, we delcared the mapStateToProps
+ * functions pass the state as an argument (it is the entire state object from our
+ * redux store) and it will return and object with the key of our reducer and the 
+ *  value it will return
+ */
+
+const mapStateToProps = (state) => {
+  return { list: state.list }
+};
+
+export default connect(mapStateToProps, { fetchPokemonList })(React.memo(Table));
 
 Table.propTypes = {
   data: PropTypes.object,
