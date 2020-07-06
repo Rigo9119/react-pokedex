@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 
+import { Picture, Img } from './PokemonImg_styles';
 const PokemonImg = props => {
   return (
     <Picture>
@@ -10,7 +10,6 @@ const PokemonImg = props => {
   );
 };
 
-
 PokemonImg.propTypes = {
   alt: PropTypes.string,
   src: PropTypes.string
@@ -18,8 +17,3 @@ PokemonImg.propTypes = {
 
 export default PokemonImg;
 
-// Styles
-
-const Picture = styled.picture``;
-
-const Img = styled.img``;

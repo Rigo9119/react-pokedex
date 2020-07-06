@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
+
+import { StInput } from './Input_styles'
 
 const Input = (props) => {
   return <StInput 
@@ -9,9 +10,4 @@ const Input = (props) => {
             onChange={props.onChange}/>;
 };
 
-export default Input;
-
-const StInput = styled.input`
-  outline: none;
-  padding: 10px 60px;
-`;
+export default React.memo(Input);

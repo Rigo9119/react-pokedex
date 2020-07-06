@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 
 import colors  from './styles/colors'
-import Pokemon from './components/pokemon/Pokemon'
-import Table from './components/list/List'
+import Pokemon from './components/pokemon/Pokemon.jsx'
+import Table from './components/list/List.jsx'
 
 const StApp = styled.div`
   align-items: center;

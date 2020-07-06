@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled from '@emotion/styled'
 import { connect } from 'react-redux';
 import { fetchPokemonList } from '../../actions/index'
 
-import colors from '../../styles/colors'
+import { PokemonList, ListTitle, Pokemon, Button } from './List_styles'
 
 class Table extends Component {
   /**
@@ -67,32 +66,3 @@ export default connect(mapStateToProps, { fetchPokemonList })(React.memo(Table))
 Table.propTypes = {
   data: PropTypes.object,
 }
-
-// styles 
-
-const PokemonList = styled.ul``;
-
-const ListTitle = styled.h4`
-  margin-bottom: 20px;
-`;
-
-const Pokemon = styled.li`
-  list-style: none;
-  margin: 2px 0;
-`;
-
-const Button = styled.button`
-  background-color: transparent;
-  border: 1px solid transparent;
-  color: ${colors.white};
-  outline: none;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-transform: capitalize;
-
-  :hover {
-    border: 1px solid ${colors.yellow};
-    font-weight: bolder;
-    color: yellow;
-  }
-`;
